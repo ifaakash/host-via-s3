@@ -9,7 +9,7 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
         Effect    = "Allow",
         Principal = "*",
         Action    = "s3:GetObject",
-        Resource  = var.allowed_s3
+        Resource  = "${var.allowed_s3}/*"
       }
     ]
   })

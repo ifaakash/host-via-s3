@@ -7,7 +7,7 @@ s3_client= boto3.client('s3')
 # Key (str) – The name of the key to upload to
 
 try:
-    s3_client.upload_file("landing-page.html","ifaakashwebsite","landing-page.html")
+    s3_client.upload_file("landing.html","ifaakashwebsite","landing.html", ExtraArgs={'ContentType': 'text/html'})
     print("Landing page uploaded!")
 except Exception as e:
     print(e)
