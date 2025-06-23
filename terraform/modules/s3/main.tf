@@ -4,10 +4,11 @@ resource "aws_s3_bucket" "bucket" {
   force_destroy = true
 }
 
+# Website works only if the name for html page is index.html
 resource "aws_s3_bucket_website_configuration" "website" {
   bucket = aws_s3_bucket.bucket.id
   index_document {
-    suffix = "landing.html"
+    suffix = "index.html"
   }
 }
 
